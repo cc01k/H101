@@ -38,20 +38,20 @@
         <h1>Decrypted Result</h1>
         <div class="result">
             <p>This is the decrypted result:</p>
-            <p><strong>{{ decrypted_result }}</strong></p>
+            <p><strong id="decryptedResult"></strong></p>
         </div>
-        <button class="copy-button" onclick="copyToClipboard()">Salin Hasil</button>
+        <button class="copy-button" onclick="copyToClipboard()">Copy Result</button>
     </div>
 
     <script>
         function copyToClipboard() {
-            var resultText = document.querySelector('strong').innerText;
+            var resultText = document.querySelector('#decryptedResult').innerText;
             navigator.clipboard.writeText(resultText)
                 .then(function() {
-                    alert("Hasil telah disalin ke clipboard.");
+                    alert("Result has been copied to clipboard.");
                 })
                 .catch(function() {
-                    alert("Gagal menyalin hasil ke clipboard.");
+                    alert("Failed to copy result to clipboard.");
                 });
         }
     </script>
